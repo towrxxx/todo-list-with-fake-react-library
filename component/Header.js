@@ -10,6 +10,8 @@ function Header() {
       autofocus
       onkeyup="event.keyCode === 13 && event.target.value &&
       dispatch('ADD_TODO', {title: event.target.value.replace(event.target.value[0], event.target.value[0].toUpperCase()), completed: false}) || this.focus();"
+      onblur="event.target.value &&
+      dispatch('ADD_TODO', {title: event.target.value.replace(event.target.value[0], event.target.value[0].toUpperCase()), completed: false}) || this.focus();"
     />
   </header>`;
 }
